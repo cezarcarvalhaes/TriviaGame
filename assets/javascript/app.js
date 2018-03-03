@@ -228,7 +228,35 @@ $(".user-info").hide();
         answer:"Seven Years War",
         fact:"The Seven Years War (1756 - 1763) was the first truly global conflict, involving every great European Power at the time and spanning five continents",
         },
-        
+        {question: "What was the goal of the Marshall Plan?",
+        a: "To rebuild war-devastated regions",
+        b: "To remove trade-barriers",
+        c: "To prevent the spread of Communism.",
+        answer: "All of these",
+        fact: "The Marshall Plan was an American initiative to rebuild Western Europe after WWII."
+        },
+        {question: "Which war was ended by the Treaty of Paris in 1763?",
+        a: "The Thirty Years War",
+        b: "The Hundred Years War",
+        c: "The Franco-Prussian War",
+        answer: "The Seven Years War",
+        fact: "The Treaty of Paris ended the Seven Years War (aka The French and Indian War), resulting in France ceding most of its colonial possesions to England and Spain"
+        },
+        {question: "Who was the only US President to serve more than two-terms?",
+        a: "George Washington",
+        b: "Abraham Lincoln",
+        c: "Theodore Roosevelt",
+        answer: "Franklin D. Roosevelt",
+        fact: "Franklin D. Roosevelt served as president for over 12 years, the longest of any president. He was elected four times, and died shortly into his fourth term in 1945."
+        },
+        {question: "Which African Civilization ruled Ancient Egypt as the 25th Dynasty?",
+        a: "Mali",
+        b:"Libyan Empire",
+        c:"Aksum",
+        answer:"Kush",
+        fact:"The Kingdom of Kush was an regional power for over a thousand years. Kush controlled a large territory surrounding the Nile in what is today Sudan.",
+        }
+
     ]
 
 });

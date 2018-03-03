@@ -154,7 +154,7 @@ $(document).ready(function () {
     }
 
 
-    var correctImgArr = ["assets/images/bill-murray.gif", "assets/images/kramer.gif", "assets/images/obama.gif", "assets/images/so-smart.gif", "assets/images/thats-it.gif", "assets/images/think.gif", "assets/images/usmart.gif", "assets/images/walter-white.gif"]
+    var correctImgArr = ["assets/images/sopranos.gif", "assets/images/kramer.gif", "assets/images/obama.gif", "assets/images/so-smart.gif", "assets/images/thats-it.gif", "assets/images/think.gif", "assets/images/usmart.gif", "assets/images/walter-white.gif","assets/images/finger-right.gif","assets/images/colbert.gif",]
     var wrongImgArr = ["assets/images/3rd-rock.gif", "assets/images/big-show.gif", "assets/images/dr-cox.gif", "assets/images/nope.gif", "assets/images/u-thought-wrong.gif", "assets/images/ur-wrong.gif", "assets/images/wallstreet.gif",]
 
     //Holds our question objects

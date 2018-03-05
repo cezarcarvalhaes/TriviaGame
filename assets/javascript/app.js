@@ -99,7 +99,7 @@ $(document).ready(function () {
     function rightAnswer() {
         $(".interface").empty()
         var r = Math.floor(Math.random() * (correctImgArr.length));
-        $(".interface").html('<img src="' + correctImgArr[r] + '" class="giphy" />')
+        $(".interface").html('<img class= "img-fluid" src="' + correctImgArr[r] + '" class="giphy" />')
         $(".interface").prepend("<h2>Correct!</h2>")
         $(".interface").append('<div class="question"><p>' + questionArr[random].fact + '</p></div>');
         var newScore = parseInt($("#score").text());
@@ -113,7 +113,7 @@ $(document).ready(function () {
     function wrongAnswer() {
         $(".interface").empty()
         var r = Math.floor(Math.random() * (wrongImgArr.length));
-        $(".interface").html('<img src="' + wrongImgArr[r] + '" class="giphy" />')
+        $(".interface").html('<img class= "img-fluid" src="' + wrongImgArr[r] + '" class="giphy" />')
         $(".interface").prepend("<h2>Incorrect!</h2>")
         $(".interface").append('<div class="question"><p>' + questionArr[random].fact + '</p></div>');
         var newScore = parseInt($("#score").text());
@@ -127,7 +127,7 @@ $(document).ready(function () {
     function timeUp() {
         $(".interface").empty()
         var r = Math.floor(Math.random() * (timeUpImgArr.length));
-        $(".interface").html('<img src="' + timeUpImgArr[r] + '" class="giphy" />')
+        $(".interface").html('<img class= "img-fluid" src="' + timeUpImgArr[r] + '" class="giphy" />')
         $(".interface").prepend("<h2>Time's Up!</h2>")
         $(".interface").append('<div class="question"><p>' + questionArr[random].fact + '</p></div>');
         var newScore = parseInt($("#score").text());
@@ -158,7 +158,7 @@ $(document).ready(function () {
     var correctImgArr = ["assets/images/sopranos.gif", "assets/images/kramer.gif", "assets/images/obama.gif", "assets/images/so-smart.gif", "assets/images/thats-it.gif", "assets/images/think.gif", "assets/images/usmart.gif", "assets/images/walter-white.gif", "assets/images/finger-right.gif", "assets/images/colbert.gif",];
     var wrongImgArr = ["assets/images/3rd-rock.gif", "assets/images/big-show.gif", "assets/images/dr-cox.gif", "assets/images/nope.gif", "assets/images/u-thought-wrong.gif", "assets/images/ur-wrong.gif", "assets/images/wallstreet.gif",];
     //Holds our question objects
-    var timeUpImgArr = ["assets/images/cobain.gif","assets/images/timesup.gif","assets/images/tick-tock.gif",];
+    var timeUpImgArr = ["assets/images/cobain.gif","assets/images/times-up.gif","assets/images/tick-tock.gif",];
 
     var questionArr = [
         {

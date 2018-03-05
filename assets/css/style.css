@@ -35,20 +35,24 @@ h2 {
     margin-right: auto;
 }
 .user-info {
-    width: 90%;
-    background: #9b9a92;
-    height: 50px;
-    color: #eee;
+    display: block;
+    clear: both;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #444; 
+    border-radius: 25px; 
     text-align: center;
-    padding:10px;
-    border-radius: 20px;
-}
-
-.hide-score {
-    display: none;
+    margin-top: 10px;
+    background: #9b9a92;
+    color: #eee;
+    height: 3em;
+    padding:.5em;
 }
 
 .footer {
+    display: block;
+    clear: both;
     width: 100%;
     background: #7a8493;
     height: 50px;
@@ -57,6 +61,7 @@ h2 {
     position: fixed;
     bottom: 0px;
     left: 0px;
+    margin-top: 2em;
     padding-top: 15px;
 }
 

@@ -77,15 +77,9 @@ $(document).ready(function () {
             //User selects answer
             $(".choices").on("click", function () {
                 if ($(this).text() === questionArr[random].answer) {
-                    $(this).addClass('correct');
-                    var newScore = parseInt($("#score").text());
-                    $("#score").html(newScore + 10);
                     rightAnswer();
                 }
                 else {
-                    $(this).addClass('wrong');
-                    var newScore = parseInt($("#score").text());
-                    $("#score").html(newScore - 10);
                     wrongAnswer();
                 }
             });
@@ -108,10 +102,12 @@ $(document).ready(function () {
         $(".interface").html('<img src="' + correctImgArr[r] + '" class="giphy" />')
         $(".interface").prepend("<h2>Correct!</h2>")
         $(".interface").append('<div class="question"><p>' + questionArr[random].fact + '</p></div>');
+        var newScore = parseInt($("#score").text());
+        $("#score").html(newScore + 10);
         questionArr.splice(random, 1); // Remove this question from game
         clearInterval(showQuestion);
         stopCountDown();
-        setTimeout(startGame, 3000);
+        setTimeout(startGame, 5000);
     }
 
     function wrongAnswer() {
@@ -120,18 +116,23 @@ $(document).ready(function () {
         $(".interface").html('<img src="' + wrongImgArr[r] + '" class="giphy" />')
         $(".interface").prepend("<h2>Incorrect!</h2>")
         $(".interface").append('<div class="question"><p>' + questionArr[random].fact + '</p></div>');
+        var newScore = parseInt($("#score").text());
+        $("#score").html(newScore - 10);
         questionArr.splice(random, 1); // Remove this question from game
         clearInterval(showQuestion);
         stopCountDown();
-        setTimeout(startGame, 3000);
+        setTimeout(startGame, 5000);
     }
 
     function timeUp() {
         $(".interface").empty()
-        var r = Math.floor(Math.random() * (wrongImgArr.length));
-        $(".interface").html('<img src="' + wrongImgArr[r] + '" class="giphy" />')
+        var r = Math.floor(Math.random() * (timeUpImgArr.length));
+        $(".interface").html('<img src="' + timeUpImgArr[r] + '" class="giphy" />')
         $(".interface").prepend("<h2>Time's Up!</h2>")
         $(".interface").append('<div class="question"><p>' + questionArr[random].fact + '</p></div>');
+        var newScore = parseInt($("#score").text());
+        $("#score").html(newScore - 10);
+        questionArr.splice(random, 1); // Remove this question from game
         clearInterval(showQuestion);
         stopCountDown();
         setTimeout(startGame, 5000);
@@ -154,10 +155,11 @@ $(document).ready(function () {
     }
 
 
-    var correctImgArr = ["assets/images/sopranos.gif", "assets/images/kramer.gif", "assets/images/obama.gif", "assets/images/so-smart.gif", "assets/images/thats-it.gif", "assets/images/think.gif", "assets/images/usmart.gif", "assets/images/walter-white.gif","assets/images/finger-right.gif","assets/images/colbert.gif",]
-    var wrongImgArr = ["assets/images/3rd-rock.gif", "assets/images/big-show.gif", "assets/images/dr-cox.gif", "assets/images/nope.gif", "assets/images/u-thought-wrong.gif", "assets/images/ur-wrong.gif", "assets/images/wallstreet.gif",]
-
+    var correctImgArr = ["assets/images/sopranos.gif", "assets/images/kramer.gif", "assets/images/obama.gif", "assets/images/so-smart.gif", "assets/images/thats-it.gif", "assets/images/think.gif", "assets/images/usmart.gif", "assets/images/walter-white.gif", "assets/images/finger-right.gif", "assets/images/colbert.gif",];
+    var wrongImgArr = ["assets/images/3rd-rock.gif", "assets/images/big-show.gif", "assets/images/dr-cox.gif", "assets/images/nope.gif", "assets/images/u-thought-wrong.gif", "assets/images/ur-wrong.gif", "assets/images/wallstreet.gif",];
     //Holds our question objects
+    var timeUpImgArr = ["assets/images/cobain.gif","assets/images/timesup.gif","assets/images/tick-tock.gif",];
+
     var questionArr = [
         {
             question: "In what year did the war of 1812 begin?",
@@ -263,61 +265,69 @@ $(document).ready(function () {
             answer: "Kush",
             fact: "The Kingdom of Kush was an regional power for over a thousand years. Kush controlled a large territory surrounding the Nile in what is today Sudan.",
         },
-        {question:"Which Roman general is famous for conquering and annexing Gaul?",
-        a:"Magnus Sextus Pompey",
-        b:"Scipio Africanus",
-        c:"Magnus Graecus Sulla",
-        answer:"Gaius Julius Caesar",
-        fact:"Julius Caesar's 'Gallic Wars' lasted from 58 - 50 BCE. The wars pacified the various Gallic tribes and formally annexed the huge territory of Gaul into the Roman Republic.",
+        {
+            question: "Which Roman general is famous for conquering and annexing Gaul?",
+            a: "Magnus Sextus Pompey",
+            b: "Scipio Africanus",
+            c: "Magnus Graecus Sulla",
+            answer: "Gaius Julius Caesar",
+            fact: "Julius Caesar's 'Gallic Wars' lasted from 58 - 50 BCE. The wars pacified the various Gallic tribes and formally annexed the huge territory of Gaul into the Roman Republic.",
         },
-        {question:"Which former Roman army commander and Germanic King led the Visigoths to sack Rome in 410 CE?",
-        a:"Theodosius",
-        b:"Genseric",
-        c:"Theodoric",
-        answer:"Alaric",
-        fact:"Alaric's sack of Rome was the first time the city had been sacked in over 1000 years.",
+        {
+            question: "Which former Roman army commander and Germanic King led the Visigoths to sack Rome in 410 CE?",
+            a: "Theodosius",
+            b: "Genseric",
+            c: "Theodoric",
+            answer: "Alaric",
+            fact: "Alaric's sack of Rome was the first time the city had been sacked in over 1000 years.",
         },
-        {question:"Which famous general from history terrorized Italy by crossing the Alps with a large army that included war elephants?",
-        a:"Napoleon Bonaparte",
-        b:"Brennus",
-        c:"Geiseric of the Vandals",
-        answer:"Hannibal Barca",
-        fact:"Hannibal stunned the Romans by taking an overland journey from Spain to Italy through the Alps. His army initially consisted of 38,000 infantry, 8,000 cavalry and 38 elephants",
+        {
+            question: "Which famous general from history terrorized Italy by crossing the Alps with a large army that included war elephants?",
+            a: "Napoleon Bonaparte",
+            b: "Brennus",
+            c: "Geiseric of the Vandals",
+            answer: "Hannibal Barca",
+            fact: "Hannibal stunned the Romans by taking an overland journey from Spain to Italy through the Alps. His army initially consisted of 38,000 infantry, 8,000 cavalry and 38 elephants",
         },
-        {question:"Situated on the North African coast (modern-day Tunisia), the great city-state of Carthage was actually founded as a colony by which great sea-faring civilization?",
-        a:"Eqyptians",
-        b:"Romans",
-        c:"Greeks",
-        answer:"Phoenicians",
-        fact:"Carthage was founded in 814 BC by the Phoenician state of Tyre. Carthage gained independence around 650 BCE and established its political hegemony over other Phoenician settlements throughout the western Mediterranean",
+        {
+            question: "Situated on the North African coast (modern-day Tunisia), the great city-state of Carthage was actually founded as a colony by which great sea-faring civilization?",
+            a: "Eqyptians",
+            b: "Romans",
+            c: "Greeks",
+            answer: "Phoenicians",
+            fact: "Carthage was founded in 814 BC by the Phoenician state of Tyre. Carthage gained independence around 650 BCE and established its political hegemony over other Phoenician settlements throughout the western Mediterranean",
         },
-        {question:"Who was the first emperor of a unified China?",
-        a:"Tang of Shang",
-        b:"Zhou Ren",
-        c:"Zhao Chengjiao",
-        answer:"Qin Shi Huang",
-        fact:"Qin Shi Huang (259 - 210 BCE) was the founder of the Qin dynasty. He became King of Qin at 13, and later, at 38, emperor of unified-China after conquering all of the warring states in 221 BCE.",
+        {
+            question: "Who was the first emperor of a unified China?",
+            a: "Tang of Shang",
+            b: "Zhou Ren",
+            c: "Zhao Chengjiao",
+            answer: "Qin Shi Huang",
+            fact: "Qin Shi Huang (259 - 210 BCE) was the founder of the Qin dynasty. He became King of Qin at 13, and later, at 38, emperor of unified-China after conquering all of the warring states in 221 BCE.",
         },
-        {question:"Which English king was deposed executed after being tried for treason by the House of Commons during the English civil wars?",
-        a:"James II",
-        b:"William III",
-        c:"Henry IV",
-        answer:"Charles I",
-        fact:"Charles I was monarch of the three kingdoms of England, Scotland, and Ireland from 1625 until his execution in 1649",
+        {
+            question: "Which English king was deposed executed after being tried for treason by the House of Commons during the English civil wars?",
+            a: "James II",
+            b: "William III",
+            c: "Henry IV",
+            answer: "Charles I",
+            fact: "Charles I was monarch of the three kingdoms of England, Scotland, and Ireland from 1625 until his execution in 1649",
         },
-        {question:"Who was the first Prime Minister of Canada?",
-        a:"Alexander Mackenzie",
-        b:"Pierre Trudeau",
-        c:"Jean Cretien",
-        answer:"Sir John A MacDonald",
-        fact:"Sir John Alexander Macdonald (1815 – 1891) was the first Prime Minister of Canada (1867–1873, 1878–1891). The dominant figure of Canadian Confederation, he had a political career which spanned almost half a century.",
-        },    
-        {question:"Which leader declared Brazil's independence and founded the Empire of Brazil?",
-        a:"Joao I",
-        b:"Simon Bolivar",
-        c:"Tiradentes",
-        answer:"Dom Pedro I",
-        fact:"Dom Pedro I  (1798 – 1834), nicknamed 'the Liberator', was the founder and first ruler of the Empire of Brazil. As King Dom Pedro IV, he reigned briefly over Portugal.",
+        {
+            question: "Who was the first Prime Minister of Canada?",
+            a: "Alexander Mackenzie",
+            b: "Pierre Trudeau",
+            c: "Jean Cretien",
+            answer: "Sir John A MacDonald",
+            fact: "Sir John Alexander Macdonald (1815 – 1891) was the first Prime Minister of Canada (1867–1873, 1878–1891). The dominant figure of Canadian Confederation, he had a political career which spanned almost half a century.",
+        },
+        {
+            question: "Which leader declared Brazil's independence and founded the Empire of Brazil?",
+            a: "Joao I",
+            b: "Simon Bolivar",
+            c: "Tiradentes",
+            answer: "Dom Pedro I",
+            fact: "Dom Pedro I  (1798 – 1834), nicknamed 'the Liberator', was the founder and first ruler of the Empire of Brazil. As King Dom Pedro IV, he reigned briefly over Portugal.",
         },
     ]
 

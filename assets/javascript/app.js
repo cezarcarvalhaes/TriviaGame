@@ -99,7 +99,7 @@ $(document).ready(function () {
     function rightAnswer() {
         $(".interface").empty()
         var r = Math.floor(Math.random() * (correctImgArr.length));
-        $(".interface").html('<img class= "img-fluid" src="' + correctImgArr[r] + '" class="giphy" />')
+        $(".interface").html('<img src="' + correctImgArr[r] + '" class="img-fluid giphy" />')
         $(".interface").prepend("<h2>Correct!</h2>")
         $(".interface").append('<div class="question"><p>' + questionArr[random].fact + '</p></div>');
         var newScore = parseInt($("#score").text());
@@ -113,7 +113,7 @@ $(document).ready(function () {
     function wrongAnswer() {
         $(".interface").empty()
         var r = Math.floor(Math.random() * (wrongImgArr.length));
-        $(".interface").html('<img class= "img-fluid" src="' + wrongImgArr[r] + '" class="giphy" />')
+        $(".interface").html('<img src="' + wrongImgArr[r] + '" class="img-fluid giphy" />')
         $(".interface").prepend("<h2>Incorrect!</h2>")
         $(".interface").append('<div class="question"><p>' + questionArr[random].fact + '</p></div>');
         var newScore = parseInt($("#score").text());
@@ -127,7 +127,7 @@ $(document).ready(function () {
     function timeUp() {
         $(".interface").empty()
         var r = Math.floor(Math.random() * (timeUpImgArr.length));
-        $(".interface").html('<img class= "img-fluid" src="' + timeUpImgArr[r] + '" class="giphy" />')
+        $(".interface").html('<img src="' + timeUpImgArr[r] + '" class="img-fluid giphy" />')
         $(".interface").prepend("<h2>Time's Up!</h2>")
         $(".interface").append('<div class="question"><p>' + questionArr[random].fact + '</p></div>');
         var newScore = parseInt($("#score").text());

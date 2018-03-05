@@ -100,8 +100,7 @@ p {
     margin-top: 10px;
     background: #9b9a92;
     color: #eee;
-    height: 75px;
-    line-height: 75px;
+    padding:.6em;
  }
 
  .choices :hover {

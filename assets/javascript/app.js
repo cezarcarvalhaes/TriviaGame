@@ -263,7 +263,7 @@ $(document).ready(function () {
             b: "Libyan Empire",
             c: "Aksum",
             answer: "Kush",
-            fact: "The Kingdom of Kush was an regional power for over a thousand years. Kush controlled a large territory surrounding the Nile in what is today Sudan.",
+            fact: "The Kingdom of Kush was a regional power for over a thousand years. Kush controlled a large territory surrounding the Nile in what is today Sudan.",
         },
         {
             question: "Which Roman general is famous for conquering and annexing Gaul?",

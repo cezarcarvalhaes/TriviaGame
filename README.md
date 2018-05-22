@@ -1,4 +1,11 @@
-# TriviaGame
+# Ultimate World History Trivia
+
+This trivia game is played in the browser. It's coded primarily in Javascript and jQuery.
+
+Check out the live app at: https://cezarcarvalhaes.github.io/TriviaGame/
+
+---
+**Getting Started:**
 
 Click Start to begin!
 
@@ -8,4 +15,4 @@ You must select an answer before time runs out! If time runs out, 10pts is subtr
 
 Prove your history knowledge with this trivia game!
 
-Created by Cezar Carvalhaes in 2018.
+*Created by Cezar Carvalhaes in 2018.*

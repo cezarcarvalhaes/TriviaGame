@@ -2,7 +2,7 @@
 
 This trivia game is played in the browser. It's coded primarily in Javascript and jQuery.
 
-Check out the live app at: https://cezarcarvalhaes.github.io/TriviaGame/
+Check out the live app at: https://cezarcarvalhaes.github.io/ultimate-wh-trivia
 
 ---
 **Getting Started:**
